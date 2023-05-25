@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:barcode/barcode.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
-import '../../models/flight.dart';
-import '../../providers/theme_provider.dart';
-import '../../resources/utils/const.dart';
+import '../../../providers/theme_provider.dart';
+import '../../../resources/utils/const.dart';
+import 'history_item.dart';
 
-class QrScreen extends StatelessWidget {
-  const QrScreen({super.key});
+class HistoryScreen extends StatelessWidget {
+  static const routeName = '/history';
+  const HistoryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,18 +15,14 @@ class QrScreen extends StatelessWidget {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text('QrScreen'),
+          title: const Text('HistoryScreen'),
         ),
         body: Container(
             color:
                 themeProvider.isDarkMode ? Constants.darkBG : Constants.lightBG,
-            child: Center(
+            child: const Center(
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                  Text(
-                    'QrScreen Text',
-                  ),
-                ]))));
+                    children: [HistoryItem()]))));
   }
 }

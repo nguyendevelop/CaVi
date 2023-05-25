@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../resources/widgets/other/custom_bottom_navbar.dart';
-import 'home/historyTab/history_screen.dart';
-import 'home/homeTab/home_screen.dart';
-import 'main_controller.dart';
-import 'home/qrTab/qr_screen.dart';
-import 'home/searchTab/search_screen.dart';
-import 'home/settingTab/setting_screen.dart';
+import '../../../service/flight_provider.dart';
+import '../../../providers/theme_provider.dart';
+import '../../../resources/utils/const.dart';
+import 'recommend_card.dart';
+import 'search_card.dart';
 
 // class HomeScreen extends StatelessWidget {
 //   const HomeScreen({Key? key}) : super(key: key);
@@ -55,46 +53,47 @@ import 'home/settingTab/setting_screen.dart';
 //   ),
 // );
 
-class MainScreen extends StatelessWidget {
-  const MainScreen({Key? key}) : super(key: key);
+class HomeScreen extends StatelessWidget {
+  static const routeName = '/home';
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<MainController>(
-      builder: (context, controller, _) {
-        return Scaffold(
-          extendBody: true,
-          backgroundColor: const Color(0xFFFAFAFA),
-          floatingActionButtonLocation:
-              FloatingActionButtonLocation.centerDocked,
-          floatingActionButton: FloatingActionButton(
-            onPressed: () => Navigator.pushNamed(context, QrScreen.routeName),
-            child: const Icon(Icons.qr_code),
-          ),
-          bottomNavigationBar: BottomAppBar(
-            shape: const CircularNotchedRectangle(),
-            color: Theme.of(context).primaryColor,
-            elevation: 10,
-            notchMargin: 10,
-            child: CustomBottomNavBar(
-              selectedIndex: controller.selectedPage.value,
-              onTap: (index) {
-                controller.navigation(index);
-              },
-            ),
-          ),
-          body: PageView(
-            controller: controller.pageController,
-            physics: const NeverScrollableScrollPhysics(),
-            children: const [
-              HomeScreen(),
-              SearchScreen(),
-              HistoryScreen(),
-              SettingScreen(),
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    final flightProvider = Provider.of<FlightProvider>(context);
+    final flights = flightProvider.flights;
+
+    // Kiểm tra nếu danh sách chuyến bay trống, gọi phương thức fetchFlights()
+    if (flights.isEmpty) {
+      flightProvider.fetchFlights();
+    }
+
+    final TextEditingController searchControl = TextEditingController();
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Home'),
+      ),
+      body: Container(
+        color: themeProvider.isDarkMode ? Constants.darkBG : Constants.lightBG,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SearchCard(searchControl: searchControl),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: flights.length,
+                  itemBuilder: (context, index) {
+                    final flight = flights[index];
+                    return RecommendCard(flight: flight);
+                  },
+                ),
+              ),
             ],
           ),
-        );
-      },
+        ),
+      ),
     );
   }
 }

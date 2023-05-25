@@ -44,39 +44,41 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAMGJIdJGTyDAkRrioEuTxUHAzDfp1SvQo',
-    appId: '1:531312460319:web:0d1027d26a25ab4f8e0b2a',
-    messagingSenderId: '531312460319',
-    projectId: 'cavi-1433e',
-    authDomain: 'cavi-1433e.firebaseapp.com',
-    storageBucket: 'cavi-1433e.appspot.com',
+    apiKey: 'AIzaSyBkfsmIVGM_G1rHfllihz5FvF1TAuOudgk',
+    appId: '1:577291341581:web:cf55e362dcf08af400aa44',
+    messagingSenderId: '577291341581',
+    projectId: 'cavi-nguyendevelop',
+    authDomain: 'cavi-nguyendevelop.firebaseapp.com',
+    storageBucket: 'cavi-nguyendevelop.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBqZ916A-HpbAbxULYihh674LaKKh4fAHQ',
-    appId: '1:531312460319:android:ffea963693e4e5bb8e0b2a',
-    messagingSenderId: '531312460319',
-    projectId: 'cavi-1433e',
-    storageBucket: 'cavi-1433e.appspot.com',
+    apiKey: 'AIzaSyB_sW9gUQAth_0YwBFhMdY8smRk1yRSy-4',
+    appId: '1:577291341581:android:cea97e2e06c2f17200aa44',
+    messagingSenderId: '577291341581',
+    projectId: 'cavi-nguyendevelop',
+    storageBucket: 'cavi-nguyendevelop.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBdMiQOZRkLSuZQANj4YkZK3SlCHm9pVYI',
-    appId: '1:531312460319:ios:baf9b816a04037898e0b2a',
-    messagingSenderId: '531312460319',
-    projectId: 'cavi-1433e',
-    storageBucket: 'cavi-1433e.appspot.com',
-    iosClientId: '531312460319-ian1q2m3jll1plg12793k1hns2sig4r2.apps.googleusercontent.com',
-    iosBundleId: 'com.example.caviApp',
+    apiKey: 'AIzaSyCWR-rEGaLsXpWytpQtnLW0IS5OGY1EiQw',
+    appId: '1:577291341581:ios:c4e859189cd126b100aa44',
+    messagingSenderId: '577291341581',
+    projectId: 'cavi-nguyendevelop',
+    storageBucket: 'cavi-nguyendevelop.appspot.com',
+    androidClientId: '577291341581-h5fmaf3u6aa9338u09qs1mmj0kpgtuvd.apps.googleusercontent.com',
+    iosClientId: '577291341581-dksksm9d06flrnb6lrh3msbn9o3b7tvn.apps.googleusercontent.com',
+    iosBundleId: 'com.example.caviapp',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBdMiQOZRkLSuZQANj4YkZK3SlCHm9pVYI',
-    appId: '1:531312460319:ios:baf9b816a04037898e0b2a',
-    messagingSenderId: '531312460319',
-    projectId: 'cavi-1433e',
-    storageBucket: 'cavi-1433e.appspot.com',
-    iosClientId: '531312460319-ian1q2m3jll1plg12793k1hns2sig4r2.apps.googleusercontent.com',
-    iosBundleId: 'com.example.caviApp',
+    apiKey: 'AIzaSyCWR-rEGaLsXpWytpQtnLW0IS5OGY1EiQw',
+    appId: '1:577291341581:ios:388da31711e451fb00aa44',
+    messagingSenderId: '577291341581',
+    projectId: 'cavi-nguyendevelop',
+    storageBucket: 'cavi-nguyendevelop.appspot.com',
+    androidClientId: '577291341581-h5fmaf3u6aa9338u09qs1mmj0kpgtuvd.apps.googleusercontent.com',
+    iosClientId: '577291341581-ajpoi1aujfqa876a06vilt4ohj3p2665.apps.googleusercontent.com',
+    iosBundleId: 'com.example.caviapp.RunnerTests',
   );
 }

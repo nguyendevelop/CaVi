@@ -11,7 +11,7 @@ class TicketSeparator extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       final boxWidth = constraints.constrainWidth();
-      final dashWidth = 4.0;
+      const dashWidth = 4.0;
       final dashHeight = height;
       final dashCount = (boxWidth / (2 * dashWidth)).floor();
       return Flex(
