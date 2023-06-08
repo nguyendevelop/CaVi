@@ -5,7 +5,7 @@ class HistoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return const Card(
       margin: EdgeInsets.fromLTRB(20, 0, 20, 20),
       // radius: 16,
       // isShowShadows: true,

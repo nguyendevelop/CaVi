@@ -13,45 +13,45 @@ class SearchCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 58,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         // color: Colors.grey,
         borderRadius: BorderRadius.all(
           Radius.circular(5.0),
         ),
       ),
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         horizontal: 8,
       ),
       child: Center(
         child: TextField(
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 15.0,
             color: Colors.black,
           ),
           decoration: InputDecoration(
-            contentPadding: EdgeInsets.all(10.0),
+            contentPadding: const EdgeInsets.all(10.0),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(5.0),
-              borderSide: BorderSide(
+              borderSide: const BorderSide(
                   // color: Colors.white,
                   ),
             ),
             enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(
+              borderSide: const BorderSide(
                   // color: Colors.white,
                   ),
               borderRadius: BorderRadius.circular(5.0),
             ),
             hintText: "Search..",
-            prefixIcon: Icon(
+            prefixIcon: const Icon(
               Icons.search,
               // color: Colors.black,
             ),
-            suffixIcon: Icon(
+            suffixIcon: const Icon(
               Icons.filter_list,
               // color: Colors.black,
             ),
-            hintStyle: TextStyle(
+            hintStyle: const TextStyle(
               fontSize: 15.0,
               // color: Colors.black,
             ),

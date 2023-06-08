@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../../models/flight.dart';
-import '../../resources/widgets/ticket_separator.dart';
+import '../../../models/flight.dart';
+import '../../../resources/widgets/cards/ticket_separator.dart';
 
 class RecommendCard extends StatelessWidget {
   const RecommendCard({
@@ -22,7 +22,7 @@ class RecommendCard extends StatelessWidget {
           children: [
             Text(
               flight.flightCode ?? "UNKNOWN",
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 12),
@@ -32,12 +32,12 @@ class RecommendCard extends StatelessWidget {
                   Text(
                     DateFormat('dd-MM-yyyy').format(flight.departureDate) ??
                         "UNKNOWN",
-                    style: TextStyle(color: Colors.grey, fontSize: 12),
+                    style: const TextStyle(color: Colors.grey, fontSize: 12),
                   ),
                   Text(
                     DateFormat('dd-MM-yyyy').format(flight.arrivalDate) ??
                         "UNKNOWN",
-                    style: TextStyle(color: Colors.grey, fontSize: 12),
+                    style: const TextStyle(color: Colors.grey, fontSize: 12),
                   ),
                 ],
               ),
@@ -49,13 +49,14 @@ class RecommendCard extends StatelessWidget {
                 children: [
                   Text(
                     flight.departureAirport ?? "UNKNOWN",
-                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 12, fontWeight: FontWeight.bold),
                   ),
-                  Expanded(
+                  const Expanded(
                       child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    padding: EdgeInsets.symmetric(horizontal: 8),
                     child: Stack(
-                      children: const [
+                      children: [
                         Positioned(
                           right: 0,
                           bottom: 0,
@@ -99,7 +100,8 @@ class RecommendCard extends StatelessWidget {
                   )),
                   Text(
                     flight.arrivalAirport ?? "UNKNOWN",
-                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 12, fontWeight: FontWeight.bold),
                   )
                 ],
               ),
@@ -111,17 +113,17 @@ class RecommendCard extends StatelessWidget {
                   DateFormat('hh:mm a').format(
                           DateFormat('HH:mm').parse(flight.departureTime)) ??
                       "UNKNOWN",
-                  style: TextStyle(fontSize: 12),
+                  style: const TextStyle(fontSize: 12),
                 ),
                 Text(
                   flight.getTotalDurationString() ?? "UNKNOWN",
-                  style: TextStyle(color: Colors.grey, fontSize: 12),
+                  style: const TextStyle(color: Colors.grey, fontSize: 12),
                 ),
                 Text(
                   DateFormat('hh:mm a').format(
                           DateFormat('HH:mm').parse(flight.arrivalTime)) ??
                       "UNKNOWN",
-                  style: TextStyle(fontSize: 12),
+                  style: const TextStyle(fontSize: 12),
                 ),
               ],
             )

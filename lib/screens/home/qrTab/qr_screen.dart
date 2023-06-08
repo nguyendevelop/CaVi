@@ -1,13 +1,11 @@
-import 'package:cavi_app/screens/history/history_empty.dart';
-import 'package:cavi_app/screens/history/history_item.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../../providers/theme_provider.dart';
+import '../../../resources/utils/const.dart';
 
-import '../../providers/theme_provider.dart';
-import '../../resources/utils/const.dart';
-
-class HistoryScreen extends StatelessWidget {
-  const HistoryScreen({super.key});
+class QrScreen extends StatelessWidget {
+  static const routeName = '/qr';
+  const QrScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,14 +13,18 @@ class HistoryScreen extends StatelessWidget {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text('HistoryScreen'),
+          title: const Text('QrScreen'),
         ),
         body: Container(
             color:
                 themeProvider.isDarkMode ? Constants.darkBG : Constants.lightBG,
-            child: Center(
+            child: const Center(
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [HistoryItem()]))));
+                    children: [
+                  Text(
+                    'QrScreen Text',
+                  ),
+                ]))));
   }
 }
