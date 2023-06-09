@@ -4,15 +4,17 @@ import 'package:provider/provider.dart';
 
 import '../../../../models/flight.dart';
 import '../../../../providers/selected_provider.dart';
+import '../../../../providers/theme_provider.dart';
 import '../../../../service/flight_provider.dart';
 
 class Step2 extends StatelessWidget {
-  final TextEditingController _textEditingController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     final flightProvider = Provider.of<FlightProvider>(context);
-    final selectedProvider = Provider.of<SelectedProvider>(context);
+    final selectedStep = Provider.of<SelectedStep>(context);
+    final themeProvider = Provider.of<ThemeProvider>(context);
+    final TextEditingController _textEditingController =
+        TextEditingController();
 
     if (flightProvider.flights.isEmpty) {
       flightProvider.fetchFlights();
@@ -27,7 +29,16 @@ class Step2 extends StatelessWidget {
     }).toList();
 
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Text(
+          'Airline',
+          style: TextStyle(
+            fontSize: 16.0,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const SizedBox(height: 8.0),
         TypeAheadFormField<Flight>(
           textFieldConfiguration: TextFieldConfiguration(
             controller: _textEditingController,
@@ -41,18 +52,19 @@ class Step2 extends StatelessWidget {
                 flight.airlineCode.contains(pattern) ||
                 flight.airlineName.contains(pattern));
           },
-          itemBuilder: (context, Flight suggestion) {
+          itemBuilder: (context, suggestion) {
+            final flight = suggestion as Flight;
             return ListTile(
-              title:
-                  Text('${suggestion.airlineCode} - ${suggestion.airlineName}'),
+              title: Text('${flight.airlineCode} - ${flight.airlineName}'),
             );
           },
-          onSuggestionSelected: (Flight? suggestion) {
-            selectedProvider.setSelectedFlight(suggestion);
+          onSuggestionSelected: (suggestion) {
+            final flight = suggestion as Flight;
+            selectedStep.updateStep2(flight.airlineCode, flight.airlineName);
             _textEditingController.text =
-                '${suggestion?.airlineCode} - ${suggestion?.airlineName}';
+                '${flight.airlineCode} - ${flight.airlineName}';
             print(
-                'Selected flight: ${suggestion?.airlineCode} - ${suggestion?.airlineName}');
+                'Selected flight: ${flight.airlineCode} - ${flight.airlineName}');
           },
         ),
       ],

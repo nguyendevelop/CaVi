@@ -11,6 +11,7 @@ class MainController with ChangeNotifier {
       curve: Curves.easeInOut,
     );
     selectedPage.value = index;
+    notifyListeners();
   }
 
   @override

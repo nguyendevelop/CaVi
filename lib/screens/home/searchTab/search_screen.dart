@@ -2,16 +2,17 @@ import 'package:caviapp/screens/home/searchTab/searchStep/step1.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../providers/selected_provider.dart';
 import '../../../providers/theme_provider.dart';
 import '../../../resources/utils/const.dart';
 import 'searchStep/step2.dart';
 import 'searchStep/step3.dart';
 import 'searchStep/step4.dart';
-import 'searchStep/step5.dart';
+// import 'searchStep/step5.dart';
 
 class SearchScreen extends StatefulWidget {
   static const routeName = '/search';
-  const SearchScreen({super.key});
+  const SearchScreen({Key? key}) : super(key: key);
 
   @override
   State<SearchScreen> createState() => _SearchScreenState();
@@ -42,13 +43,19 @@ class _SearchScreenState extends State<SearchScreen> {
                 onStepCancel: currentStep == 0
                     ? null
                     : () => setState(() => currentStep -= 1),
-                onStepTapped: (step) => setState(() => currentStep = step),
+                onStepTapped: (step) {
+                  //kiểm tra đk getStep
+                  if (step <= currentStep) {
+                    setState(() => currentStep = step);
+                  }
+                },
                 onStepContinue: () {
                   final isLastStep = currentStep == getSteps().length - 1;
-                  if (isLastStep) {
+                  final isCurrentStepValid = isStepValid(currentStep);
+                  if (isLastStep && isCurrentStepValid) {
                     setState(() => isCompleted = true);
                     print("Completed");
-                  } else {
+                  } else if (isCurrentStepValid) {
                     setState(() => currentStep += 1);
                   }
                 },
@@ -87,7 +94,7 @@ class _SearchScreenState extends State<SearchScreen> {
           state: currentStep > 0 ? StepState.complete : StepState.indexed,
           isActive: currentStep >= 0,
           title: const Text("Choose Departure Date"),
-          content: Step1(),
+          content: Step1(context: context),
         ),
         Step(
           state: currentStep > 1 ? StepState.complete : StepState.indexed,
@@ -104,16 +111,64 @@ class _SearchScreenState extends State<SearchScreen> {
         Step(
           state: currentStep > 3 ? StepState.complete : StepState.indexed,
           isActive: currentStep >= 3,
-          title: const Text("Ticket Confirm"),
+          title: const Text("Ticket Payment"),
           content: Step4(),
         ),
-        Step(
-          state: currentStep > 4 ? StepState.complete : StepState.indexed,
-          isActive: currentStep >= 4,
-          title: const Text("Ticket Payment"),
-          content: Step5(),
-        ),
+        // Step(
+        //   state: currentStep > 4 ? StepState.complete : StepState.indexed,
+        //   isActive: currentStep >= 4,
+        //   title: const Text("Ticket Payment"),
+        //   content: Step5(),
+        // ),
       ];
+
+  bool isStepValid(int step) {
+    switch (step) {
+      case 0:
+        return isStep1Valid();
+      case 1:
+        return isStep2Valid();
+      case 2:
+        return isStep3Valid();
+      case 3:
+        return isStep4Valid();
+      // case 4:
+      //   return isStep5Valid();
+      default:
+        return false;
+    }
+  }
+
+  bool isStep1Valid() {
+    // Kiểm tra xem Step1 đã hoàn thành hay chưa
+    final selectedStep = Provider.of<SelectedStep>(context, listen: false);
+    return selectedStep.departureDate != null;
+  }
+
+  bool isStep2Valid() {
+    // Kiểm tra xem Step2 đã hoàn thành hay chưa
+    final selectedStep = Provider.of<SelectedStep>(context, listen: false);
+    return selectedStep.airlineCode1 != null &&
+        selectedStep.airlineName1 != null;
+  }
+
+  bool isStep3Valid() {
+    // Kiểm tra xem Step3 đã hoàn thành hay chưa
+    final selectedStep = Provider.of<SelectedStep>(context, listen: false);
+    return selectedStep.flightCode != null;
+  }
+
+  bool isStep4Valid() {
+    // Kiểm tra xem Step4 đã hoàn thành hay chưa
+    // Thêm các kiểm tra khác tại đây nếu cần
+    return true;
+  }
+
+  // bool isStep5Valid() {
+  //   // Kiểm tra xem Step5 đã hoàn thành hay chưa
+  //   // Thêm các kiểm tra khác tại đây nếu cần
+  //   return true;
+  // }
 
   Widget buildCompleted() {
     return Center(

@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<ThemeProvider>(create: (_) => ThemeProvider()),
         ChangeNotifierProvider<FlightProvider>(create: (_) => FlightProvider()),
-        ChangeNotifierProvider(create: (context) => SelectedProvider()),
+        ChangeNotifierProvider(create: (context) => SelectedStep()),
       ],
       child: Consumer<ThemeProvider>(
         builder: (context, themeProvider, _) {

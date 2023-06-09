@@ -86,15 +86,20 @@ class MainScreen extends StatelessWidget {
               },
             ),
           ),
-          body: PageView(
-            controller: controller.pageController,
-            physics: const NeverScrollableScrollPhysics(),
-            children: const [
-              HomeScreen(),
-              SearchScreen(),
-              HistoryScreen(),
-              SettingScreen(),
-            ],
+          body: ValueListenableBuilder<int>(
+            valueListenable: controller.selectedPage,
+            builder: (context, value, _) {
+              return PageView(
+                controller: controller.pageController,
+                physics: const NeverScrollableScrollPhysics(),
+                children: const [
+                  HomeScreen(),
+                  SearchScreen(),
+                  HistoryScreen(),
+                  SettingScreen(),
+                ],
+              );
+            },
           ),
         );
       },
