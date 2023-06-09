@@ -60,6 +60,8 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool keyboardIsOpened = MediaQuery.of(context).viewInsets.bottom != 0.0;
+
     return Consumer<MainController>(
       builder: (context, controller, _) {
         return Scaffold(
@@ -70,10 +72,14 @@ class MainScreen extends StatelessWidget {
           backgroundColor: const Color(0xFFFAFAFA),
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
-          floatingActionButton: FloatingActionButton(
-            onPressed: () => Navigator.pushNamed(context, QrScreen.routeName),
-            child: const Icon(Icons.qr_code),
-          ),
+          floatingActionButton: keyboardIsOpened
+              ? null
+              : //or an empty container
+              FloatingActionButton(
+                  onPressed: () =>
+                      Navigator.pushNamed(context, QrScreen.routeName),
+                  child: const Icon(Icons.qr_code),
+                ),
           bottomNavigationBar: BottomAppBar(
             shape: const CircularNotchedRectangle(),
             color: Theme.of(context).primaryColor,
