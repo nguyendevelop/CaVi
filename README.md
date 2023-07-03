@@ -11,58 +11,6 @@ VIỆT - HÀN
 
 ![](RackMultipart20230703-1-jgvit3_html_2dda3eeae49c608d.png)
 
-ĐỒ ÁN CHUYÊN NGÀNH 2
-
-**ĐỀ TÀI: HỆ THỐNG ỨNG DỤNG ĐẶT VÉ MÁY BAY THÔNG MINH**
-
-Sinh viên thực hiện: **NGUYỄN ĐĂNG QUÝ**
-
-Lớp: **19IT4**
-
-Giảng viên hướng dẫn: **THS. TRỊNH THỊ NGỌC LINH**
-
-_ **Đà nẵng, tháng** _ _ **3** _ _ **năm 202** __ **3** _
-
-TRƯỜNG CÔNG NGHỆ THÔNG TIN VÀ TRUYỀN THÔNG
-
-VIỆT - HÀN
-
-**Khoa Khoa Học Máy Tính**
-
-![](RackMultipart20230703-1-jgvit3_html_2dda3eeae49c608d.png)
-
-ĐỒ ÁN CHUYÊN NGÀNH 2
-
-# **ĐỀ TÀI: HỆ THỐNG ỨNG DỤNG ĐẶT VÉ MÁY BAY THÔNG MINH**
-
-Sinh viên thực hiện: **NGUYỄN ĐĂNG QUÝ**
-
-Lớp: **19IT4**
-
-Giảng viên hướng dẫn: **THS. TRỊNH THỊ NGỌC LINH**
-
-**Đà Nẵng, tháng**  **3**  **năm 202**** 3**
-
-**LỜI CẢM ƠN**
-
-Đồ án này được được thực hiện bởi nhóm gồm 1 thành viên thuộc sinh viên của trường Đại học Công nghệ thông tin và Truyền thông Việt – Hàn Đà Nẵng. Trước hết, xin gởi lời cảm ơn chân thành đến **Cô**  **giáo**  **Trịnh Thị Ngọc Linh** đã tận tình chỉ dẫn, góp ý để báo cáo của nhóm tránh nhiều sai sót và hoàn thiện hơn. Tiếp đến, xin gởi lời cảm ơn đến các tác giả bài viết, các trang web đã góp phần cung cấp cho chúng tôi các tiện ích và thông tin cần thiết để thực hiện đồ án.
-
-Cuối cùng, mặc dù nhóm đã rất cố gắng nhưng chắc chắn sẽ còn rất nhiều sai sót mà chưa thể khắc phục hết được vì vậy rất mong Cô giáo đóng góp ý kiến, phê bình để nhóm rút thêm kinh nghiệm cho những lần sau.
-
-**Xin chân thành cảm ơn!**
-
-**NHẬN XÉT**
-
-**(Của giảng viên hướng dẫn)**
-
-…………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………
-
-Đà Nẵng, ngày … tháng ... năm 2023
-
-**Giảng viên hướng dẫn**
-
-**ThS. Trịnh Thị Ngọc Linh**
-
 **MỤC LỤC**
 
 # Trang
