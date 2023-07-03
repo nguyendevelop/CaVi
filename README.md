@@ -1,6 +1,22 @@
 # CaVi
  Flight Booking Ticket (name: CaVi)
 
+**Trước tiên giả lập yêu cầu hệ thống đề xuất chuyến bay**
+1. Xây dựng API, thu thập dữ liệu về các chuyến bay từ API https://cavijs-nguyendevelop.vercel.app/flights. Dữ liệu này có thể bao gồm thông tin về điểm khởi hành, điểm đến, giá vé, thời gian bay, loại hạng vé, v.v.
+
+2. Sử dụng các thuật toán xử lý ngôn ngữ tự nhiên để phân tích các mô tả chuyến bay. Các từ khóa quan trọng như điểm đến, thời gian, giá cả, v.v. có thể được phát hiện và trích xuất từ các mô tả chuyến bay. Các phép đo tương tự như độ tương đồng cosin có thể được sử dụng để tính toán độ tương tự giữa các chuyến bay dựa trên các từ khóa này.
+
+3. Xây dựng một mô hình học máy để học các mẫu và tính toán tương tự cho các chuyến bay dựa trên dữ liệu lịch sử đặt vé và các thông tin người dùng khác. Ví dụ, ta có thể sử dụng một mô hình học sâu như mạng noron để học các mẫu và tính toán độ tương tự cho các chuyến bay (Trường hợp này không khả thi khi đưa chương trình Flash lên PythonAnywhere không lấy được dữ liệu về app, nằm ngoài khả năng kiến thức, nếu bạn là người phát triển dự án có thể thử chương trình đề xuất trong mục 'recommendation_flight') (Trong hệ thống này áp dụng sử dụng phương pháp Cosine Similarity và thuật toán triển khai trong ngôn ngữ Dart)
+
+4. Đề xuất các chuyến bay tương tự cho người dùng dựa trên các đặc trưng và các phép đo tương tự đã tính toán. Ví dụ, nếu người dùng đã chọn một chuyến bay đến một điểm đến cụ thể, hệ thống có thể đề xuất các chuyến bay khác đến cùng điểm đến đó. Nếu người dùng muốn tìm chuyến bay với giá cả tương đương, hệ thống có thể đề xuất các chuyến bay có giá tương tự.
+
+5. Cải thiện độ chính xác của hệ thống bằng cách thu thập phản hồi từ người dùng và sử dụng nó để cập nhật mô hình học máy. Ví dụ, nếu người dùng chọn một chuyến bay được đề xuất nhưng không phù hợp với họ, hệ thống có thể sử dụng thông tin này để cập nhật mô hình và cung cấp các đề xuất chính xác hơn cho người dùng trong tương lai.
+
+6. Triển khai hệ thống trên một trang web hoặc ứng dụng di động để cung cấp các đề xuất chuyến bay cho người dùng. Hệ thống đề xuất chuyến bay có thể được tích hợp vào trang web hoặc ứng dụng di động của các hãng hàng không hoặc các trang web đặt vé máy bay để giúp người dùng tìm kiếm và đặt vé chuyến bay. Khi người dùng tìm kiếm chuyến bay, hệ thống sẽ đề xuất các chuyến bay tương tự dựa trên lịch sử tìm kiếm và đặt vé của người dùng và các đặc trưng của các chuyến bay
+
+
+-- Dưới đây là bản báo cáo xem trực tiếp dưới dạng Markdown --
+
 ![](RackMultipart20230703-1-jgvit3_html_c1233be450c4e1f4.jpg)
 
 TRƯỜNG CÔNG NGHỆ THÔNG TIN VÀ TRUYỀN THÔNG
